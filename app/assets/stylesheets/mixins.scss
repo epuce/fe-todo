@@ -1,0 +1,78 @@
+// Table of contents
+
+// === Responsiveness mixin examples
+// === Responsiveness mixin
+
+
+
+//============ Responsiveness mixin examples start ===============
+
+// @include responsive-width(min-width, none) { }
+// @include responsive-width(none, max-width) { }
+// @include responsive-width(min-width, max-width) { }
+// @include responsive-width(min-width, none, orientation) { }
+// @include responsive-width(none, max-width, orientation) { }
+// @include responsive-width(min-width, max-width, orientation) { }
+
+//============ Responsiveness mixin examples end ===============
+
+
+
+//============ Responsiveness mixin start ===============
+@mixin responsive-width ($min_width: none, $max_width: none, $orientation: none) {
+  $value1: map-get($breakpoints, $min_width);
+  $value2: map-get($breakpoints, $max_width);
+  $value3: map-get($screenOrientations, $orientation);
+
+  // min-width
+  @if map-has-key($breakpoints, $min_width) and $max_width == none and $orientation == none {
+
+    @media screen and (min-width: $value1) {
+      @content;
+    }
+
+    //min-width and orientation
+  } @else if map-has-key($breakpoints, $min_width) and $max_width == none and map-has-key($screenOrientations, $orientation) {
+
+    @media screen and (min-width: $value1) and (orientation: $value3) {
+      @content;
+    }
+
+    //max-width
+  } @else if $min_width == none and map-has-key($breakpoints, $max_width) and $orientation == none {
+
+    @media screen and (max-width: $value2) {
+      @content;
+    }
+
+    //max-width and orientation
+  } @else if $min_width == none and map-has-key($breakpoints, $max_width) and map-has-key($screenOrientations, $orientation) {
+
+    @media screen and (max-width: $value2) and (orientation: $value3) {
+      @content;
+    }
+
+    //min-width and max-width
+  } @else if map-has-key($breakpoints, $min_width) and map-has-key($breakpoints, $max_width) and $orientation == none {
+
+    @media screen and (min-width: $value1) and (max-width: $value2) {
+      @content;
+    }
+
+    //min-width and max-width and orientation
+  } @else if map-has-key($breakpoints, $min_width) and map-has-key($breakpoints, $max_width) and map-has-key($screenOrientations, $orientation) {
+
+    @media screen and (min-width: $value1) and (max-width: $value2) and (orientation: $value3) {
+      @content;
+    }
+    //orientation
+  } @else if $min_width == none and $max_width == none and map-has-key($screenOrientations, $orientation) {
+
+    @media screen and (orientation: $value3) {
+      @content;
+    }
+
+    //min-width and max-width
+  }
+}
+//============ Responsiveness mixin end ===============

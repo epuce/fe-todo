@@ -1,0 +1,47 @@
+// Table of contents
+
+// === Device setting
+// === Colors
+
+
+
+// ======== Device settings start ========
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1024px;
+$desktop-min: 1025px;
+
+$breakpoints: (
+        mobile-max: 767px,
+        tablet-min: 768px,
+        tablet-max: 1024px,
+        desktop-min: 1025px,
+);
+
+$screenOrientations: (
+        portrait: 'portrait',
+        landscape: 'landscape'
+);
+// ======== Device settings end ========
+
+
+
+// ======== Colors start ========
+$main-dark: #161823;
+$secondary-dark: #0e0f1a;
+$light-red: #ff2366;
+$light-pink: #fd51d9;
+$light-blue: #0b78e3;
+$yellow-gradient: (
+        start: #FD3F2F,
+        end: #FACE15
+);
+$purple-gradient: (
+  start: #8D4DE8,
+  end: #FF2366
+);
+$blue-gradient: (
+  start: #6956EC,
+  end: #56B2BA
+);
+// ======== Colors end ========
