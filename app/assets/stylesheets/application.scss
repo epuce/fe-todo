@@ -15,4 +15,56 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "variables";
+@import "mixins";
+@import "fonts";
 @import "home";
+
+html {
+  background: #FFF;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: map-get($breakpoints, mobile-max);
+  background-color: $main-dark;
+  color: #FFF;
+  font-family: Lato, sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin: 0;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 35px;
+  left: 15px;
+  width: 46px;
+  height: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+  background-color: transparent;
+
+  &:after {
+    width: 15px;
+    height: 15px;
+    border: 3px solid;
+    border-color: transparent transparent #FFF #FFF;
+    border-radius: 3px;
+    display: block;
+    transform: translate(10%, -10%);
+    content: '';
+  }
+}
