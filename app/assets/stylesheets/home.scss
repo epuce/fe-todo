@@ -12,7 +12,7 @@
 
 .posts-wrapper {
   position: relative;
-  padding: 75% 15px 0;
+  padding: 75% 15px 25%;
 }
 
 .post {
@@ -23,12 +23,15 @@
   }
 
   .summary {
+    margin: 20px 0;
     font-size: 18px;
     font-weight: 300;
     line-height: 26px;
   }
 
   .credentials {
+    padding: 20px 0 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     justify-content: space-between;
 
@@ -44,6 +47,50 @@
     .date {
       font-size: 16px;
       font-weight: 400;
+    }
+  }
+
+  .likes {
+    height: 28px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .latest {
+      height: 100%;
+
+      span {
+        width: 28px;
+        height: 100%;
+        border-radius: 50%;
+        background: #FFF;
+        display: inline-block;
+
+        &:nth-child(2) {
+          margin: 0 7px;
+        }
+      }
+    }
+
+    .total-count {
+      height: 100%;
+      color: #FFF;
+      display: inline-flex;
+      align-items: center;
+
+      .number {
+        margin-right: 7px;
+        padding: 0 11px;
+        height: 100%;
+        border-radius: 14px;
+        display: inline-flex;
+        align-items: center;
+        background: $light-pink;
+      }
+
+      .text {
+        opacity: 0.6;
+      }
     }
   }
 }
